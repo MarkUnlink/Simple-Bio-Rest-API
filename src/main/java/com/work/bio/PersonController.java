@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-//@RequestMapping("/api")
+@RequestMapping("/api")
 public class PersonController {
 
     @Autowired
@@ -49,6 +49,8 @@ public class PersonController {
         person.setAge(pDetails.getAge());
 
         Person updatedPerson = dbRepository.save(person);
+
+        
         return updatedPerson;
     }
 

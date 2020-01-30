@@ -31,17 +31,16 @@ public class Person implements Serializable {
     @NotBlank
     private String sex;
 
-    @NotBlank
     private int age;
 
-    @Column(nullable = false, updatable = false)
+    /*@Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    @CreatedDate
+    @CreatedDate*/
     private Date createdAt;
 
-    @Column(nullable = false)
+    /*@Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    @LastModifiedDate
+    @LastModifiedDate*/
     private Date updatedAt;
 
     public Long getId() {
@@ -80,15 +79,16 @@ public class Person implements Serializable {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+    public void setCreatedAt() {
+        //this.createdAt = createdAt;
+        this.createdAt = new Date();
     }
 
     public Date getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setUpdatedAt() {
+        this.updatedAt = new Date();
     }
 }
